@@ -17,7 +17,7 @@
     "lint:sol": "solhint 'contracts/**/*.sol'",
     "lint:ts": "eslint --max-warnings 0 .",
     "fmt:sol": "prettier 'contracts/**/*.sol' -w",
-    "release:copyfiles": "cp -r ./dist/ ./package/dist && cp README.md package.json ./package && cp -r ./contracts ./package/contracts",
+    "release:copyfiles": "cp -r ./dist/ ./package/dist && cp README.md package.json hardhat.config.ts ./package && cp -r ./contracts ./package/contracts",
     "prerelease": "yarn build && yarn build:factory && rm -rf ./package && mkdir ./package && yarn release:copyfiles",
     "release": "yarn publish ./package --access public"
   },
@@ -69,6 +69,7 @@
     "dotenv": "^8.0.0",
     "ethers": "^5.4.6",
     "solc": "^0.8.6",
+    "transform": "^1.1.2",
     "yargs": "^16.1.1"
   }
 }
